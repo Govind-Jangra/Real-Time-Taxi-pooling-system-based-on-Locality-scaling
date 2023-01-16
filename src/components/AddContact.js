@@ -4,7 +4,7 @@ const AddContact = ({ addContact }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  
+  const [place, setPlace] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,15 +13,17 @@ const AddContact = ({ addContact }) => {
       name,
       email,
       phone,
+      place,
     };
     addContact(newContact);
     setName('');
     setEmail('');
     setPhone('');
+    setPlace((''));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <label>
         Name:
         <input
@@ -46,6 +48,15 @@ const AddContact = ({ addContact }) => {
           type="text"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+        />
+      </label>
+      <br />
+      <label>
+        Place:
+        <input
+          type="text"
+          value={place}
+          onChange={(e) => setPlace(e.target.value)}
         />
       </label>
       <br />

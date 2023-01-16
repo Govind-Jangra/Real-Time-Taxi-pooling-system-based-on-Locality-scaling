@@ -4,7 +4,7 @@ const UpdateContact = ({ selectedContact, updateContact }) => {
   const [name, setName] = useState(selectedContact.name);
   const [email, setEmail] = useState(selectedContact.email);
   const [phone, setPhone] = useState(selectedContact.phone);
-
+  const [place, setPlace] = useState(selectedContact.place);
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedContact = {
@@ -12,6 +12,7 @@ const UpdateContact = ({ selectedContact, updateContact }) => {
       name,
       email,
       phone,
+      place,
     };
     updateContact(updatedContact);
   };
@@ -42,6 +43,15 @@ const UpdateContact = ({ selectedContact, updateContact }) => {
           type="text"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+        />
+      </label>
+      <br />
+      <label>
+        Place:
+        <input
+          type="text"
+          value={place}
+          onChange={(e) => setPlace(e.target.value)}
         />
       </label>
       <br />

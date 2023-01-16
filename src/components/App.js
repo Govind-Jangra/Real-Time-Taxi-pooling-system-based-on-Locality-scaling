@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 import UpdateContact from './UpdateContact';
-
+import Navbar from './Navbar';
+import About from './About';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './Home';
 const App = () => {
   const [contacts, setContacts] = useState([]);
   const [selectedContact, setSelectedContact] = useState(null);
@@ -39,7 +42,30 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
+    <Navbar/>
+    {/* <BrowserRouter>
+    
+      <Routes>
+      
+      <Route exact path="/" component={<Home/>} />
+      <Route exact path="/addContact" component={<AddContact addContact={addContact} />} />
+      <Route exact path="/contactList" component={<ContactList
+        contacts={contacts}
+        deleteContact={deleteContact}
+        selectContact={selectContact}
+      />} />
+     <Route exact path="/updateContact" element={[{selectedContact && (
+        <UpdateContact
+          selectedContact={selectedContact}
+          updateContact={updateContact}
+        />
+      )}]} />
+      
+      </Routes>
+      </BrowserRouter> */}
+      <Home/>
+      <About/>
       <AddContact addContact={addContact} />
       <ContactList
         contacts={contacts}
@@ -52,7 +78,7 @@ const App = () => {
           updateContact={updateContact}
         />
       )}
-    </div>
+    </>
   );
 };
 

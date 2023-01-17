@@ -4,12 +4,14 @@ import ContactList from './ContactList';
 import UpdateContact from './UpdateContact';
 import Navbar from './Navbar';
 import About from './About';
+import Destination from './Destination';
+import Form from './Form';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Home';
 const App = () => {
   const [contacts, setContacts] = useState([]);
   const [selectedContact, setSelectedContact] = useState(null);
-
+ 
   useEffect(() => {
     const storedContacts = JSON.parse(localStorage.getItem('contacts'));
     if (storedContacts) {
@@ -43,7 +45,10 @@ const App = () => {
 
   return (
     <>
+    
     <Navbar/>
+    <Form/>
+    <Destination/>
     {/* <BrowserRouter>
     
       <Routes>

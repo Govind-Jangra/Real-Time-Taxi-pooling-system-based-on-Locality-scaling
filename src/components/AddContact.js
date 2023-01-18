@@ -23,6 +23,9 @@ const AddContact = ({ addContact }) => {
   };
 
   return (
+    <>
+    <h3 className="mx-16 my-2">Add Your Details to Add in This Pool</h3>
+    <div className="  bg-white dark:bg-gray-900">
     <form onSubmit={handleSubmit} >
       <label>
         Name:
@@ -60,8 +63,10 @@ const AddContact = ({ addContact }) => {
         />
       </label>
       <br />
-      <button type="submit">Add Contact</button>
+      <button class=" py-2 mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Add In Pool</button>
     </form>
+    </div>
+    </>
   );
 };
 

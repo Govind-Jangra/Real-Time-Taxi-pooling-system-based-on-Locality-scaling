@@ -2,6 +2,8 @@
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 const CrudDetails = () => {
   
     const [contacts, setContacts] = useState([]);
@@ -35,15 +37,16 @@ const CrudDetails = () => {
         const selected = contacts.find((c) => c.id === id);
         setSelectedContact(selected);
       };
+      let {id} = useParams();
   return (
     <>
-      
-      <ContactList
+    
+      <ContactList  id={id}
         contacts={contacts}
         deleteContact={deleteContact}
         selectContact={selectContact}
       />
-      <AddContact addContact={addContact} />
+      <AddContact  addContact={addContact} />
     </>
   )
 }

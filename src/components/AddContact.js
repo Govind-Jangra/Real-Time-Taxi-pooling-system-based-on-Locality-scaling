@@ -24,7 +24,8 @@ const AddContact = ({ addContact }) => {
 
   return (
     <>
-    <h3 className="mx-16 my-2">Add Your Details to Add in This Pool</h3>
+    
+    <h3 className="mx-16 my-2">Add Your Details to Add in This Pool:</h3>
     <div className="  bg-white dark:bg-gray-900">
     <form onSubmit={handleSubmit} >
       <label>

@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddContact = ({ dest,addContact }) => {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [time, setTime] = useState('');
+
   const [phone, setPhone] = useState('');
   const [place, setPlace] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!name ||!time ||!phone || !place){
+      toast.error("Fill every field properly");
+      return;
+    }
     const newContact = {
       id: Date.now(),
       name,
-      email,
+      time,
+      
       phone,
       place,
     };
     addContact(newContact);
     setName('');
-    setEmail('');
-    setPhone('');
-    setPlace((''));
+    
+    setTime(' ');
+    setPhone(' ');
+    setPlace('');
+    toast.success("Details added successfully");
   };
 
   return (
     <>
-    
+    <div><Toaster/></div>
     <h3 className="mx-16 my-2">Add Your Details to Add in This Pool: {dest}</h3>
     <div className="  bg-white dark:bg-gray-900">
     <form onSubmit={handleSubmit} >
@@ -38,18 +47,18 @@ const AddContact = ({ dest,addContact }) => {
               </label>
       <br />
       <label>
-        Email:
+        Timing:
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="datetime-local"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
         />
       </label>
       <br />
       <label>
         Phone:
         <input
-          type="text"
+          type="number"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />

@@ -41,7 +41,7 @@ const CrudDetails = () => {
   return (
     <>
     
-      <ContactList  dest={id}
+      <ContactList  id={id}
         contacts={contacts}
         deleteContact={deleteContact}
         selectContact={selectContact}

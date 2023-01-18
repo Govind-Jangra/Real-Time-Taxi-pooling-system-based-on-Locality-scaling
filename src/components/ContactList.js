@@ -1,22 +1,32 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
-const ContactList = ({ dest,contacts, deleteContact, selectContact }) => {
+const ContactList = ({ id,contacts, deleteContact, selectContact }) => {
+  const notify = () => toast.success('Deleted Succesfully');
   return (
     <>
-    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Destination Place : {dest}</h1>
+     <div><Toaster/></div>
+    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Destination Place : {id}</h1>
     <ul>
     
       {contacts.map((c) => (
-        c.place === {dest} ?
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        c.place===id?
+        <div className=" w-100vh max-w-sm rounded overflow-hidden shadow-lg">
         <li key={c.id}>
-        <div className="">Name: {c.name} </div>
-        <div className="">Email: {c.email} </div>
-        <div className="">Phone No:  {c.phone} </div>
-        {/* <div className="">Destination: {c.place} </div> */}
+        <div className="font-medium text-xl mb-2"> {c.name} </div>
+        <div className="text-gray-600">Timing: {c.time} </div>
+        <div className="text-gray-600">Phone No:  {c.phone} </div>
+        <div className="text-gray-600">Destination: {c.place} </div>
           
         
-          <button onClick={() => deleteContact(c.id)} class=" py-2 mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <button 
+  onClick={() => {
+    deleteContact(c.id);
+    notify();
+  }} 
+  className=" mt-4 bg-red-500 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-full"
+>
+
           Delete
 </button>
         </li>

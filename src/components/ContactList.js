@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ContactList = ({ id,contacts, deleteContact, selectContact }) => {
+const ContactList = ({ dest,contacts, deleteContact, selectContact }) => {
   return (
     <>
-    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Destination Place : {id}</h1>
+    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Destination Place : {dest}</h1>
     <ul>
     
       {contacts.map((c) => (
-        c.place === id ?
+        c.place === {dest} ?
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <li key={c.id}>
         <div className="">Name: {c.name} </div>

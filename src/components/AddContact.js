@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddContact = ({ addContact }) => {
+const AddContact = ({ dest,addContact }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -25,7 +25,7 @@ const AddContact = ({ addContact }) => {
   return (
     <>
     
-    <h3 className="mx-16 my-2">Add Your Details to Add in This Pool:</h3>
+    <h3 className="mx-16 my-2">Add Your Details to Add in This Pool: {dest}</h3>
     <div className="  bg-white dark:bg-gray-900">
     <form onSubmit={handleSubmit} >
       <label>

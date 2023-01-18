@@ -37,16 +37,16 @@ const CrudDetails = () => {
         const selected = contacts.find((c) => c.id === id);
         setSelectedContact(selected);
       };
-      let {id} = useParams();
+      let {id} = useParams();  //to retain last path name in address
   return (
     <>
     
-      <ContactList  id={id}
+      <ContactList  dest={id}
         contacts={contacts}
         deleteContact={deleteContact}
         selectContact={selectContact}
       />
-      <AddContact  addContact={addContact} />
+      <AddContact dest={id} addContact={addContact} />
     </>
   )
 }

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Home';
 import ViewPools from './ViewPools';
 import CrudDetails from './CrudDetails';
+import AddContact from './AddContact';
 const App = () => {
   
   return (
@@ -16,6 +17,7 @@ const App = () => {
     <Navbar/>
       <Routes>  
       <Route exact path="/" element={<Home/>} />
+      <Route exact path="/addPools" element={<AddContact/>} />
       <Route exact path="/about" element={<About/>} />
       <Route exact path="/viewpools" element={<ViewPools/>} />
       <Route exact path="/PoolMemberDetails/:id" render={(props) => <CrudDetails {...props} place={props.match.params.id}  />} element={<CrudDetails />} />    

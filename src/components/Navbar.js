@@ -24,7 +24,7 @@ const Navbar = () => {
       <Link to="/viewpools" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
         ViewPools
       </Link>
-      <Link to="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
+      <Link to="/addPools" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
         AddPools
       </Link>  
       <Link to="/about" className=" px-4 block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
@@ -34,11 +34,13 @@ const Navbar = () => {
         Contact Us
       </Link>
     </div>
-    <li>{isAuthenticated &&
+    {isAuthenticated &&
+      <li>
       <p>
     <Auth0Profile/>
     </p>
-    }</li>
+    </li>
+    }
     <li>
    { isAuthenticated ? (
     <div className="">

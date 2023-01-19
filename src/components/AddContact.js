@@ -10,13 +10,13 @@ const AddContact = ({ dest,addContact }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!name ||!time ||!phone || !place){
+    if(!time ||!phone || !place){
       toast.error("Fill every field properly");
       return;
     }
     const newContact = {
       id: Date.now(),
-      name,
+      name:user.name,
       time,
       
       phone,
@@ -39,15 +39,15 @@ const AddContact = ({ dest,addContact }) => {
     <h3 className="mx-16 my-2">Add Your Details</h3>
     <div className="  bg-white dark:bg-gray-900">
     <form onSubmit={handleSubmit} >
-      <label>
+      {/* <label>
         UserName:
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-              </label>
-      <br />
+              </label> */}
+      {/* <br /> */}
       <label>
         Timing:
         <input

@@ -18,7 +18,7 @@ const ContactList = ({ id,contacts, deleteContact, selectContact }) => {
         <div className="text-gray-600">Phone No:  {c.phone} </div>
         <div className="text-gray-600">Destination: {c.place} </div>
           
-        
+        {
         <button 
   onClick={() => {
     deleteContact(c.id);
@@ -29,6 +29,7 @@ const ContactList = ({ id,contacts, deleteContact, selectContact }) => {
 
           Delete
 </button>
+        }
         </li>
         </div>
         :null

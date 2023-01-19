@@ -12,9 +12,9 @@ const home = ({automation}) => {
                 <i className="fa fa-whatsapp"></i>
                 <i className="fa fa-google"></i>
             </div>
-            <div className="contact">
+            {/* <div className="contact">
                 Contact : 99999999999
-            </div>
+            </div> */}
         </div>
         <nav className='l'>
                 <div className="logo">

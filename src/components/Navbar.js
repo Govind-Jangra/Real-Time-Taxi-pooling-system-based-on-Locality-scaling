@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from './Login';
 import Logout from './Logout';
+import Auth0Profile from './Auth0Profile';
 import {Link} from "react-router-dom";
 const Navbar = () => {
   const {  isAuthenticated } = useAuth0();
@@ -23,9 +24,9 @@ const Navbar = () => {
       <Link to="/viewpools" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
         ViewPools
       </Link>
-      {/* <Link to="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
+      <Link to="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
         AddPools
-      </Link> */}
+      </Link>  
       <Link to="/about" className=" px-4 block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 px-6 font-bold text-lg">
         About
       </Link>
@@ -33,10 +34,18 @@ const Navbar = () => {
         Contact Us
       </Link>
     </div>
+    <li>{isAuthenticated &&
+      <p>
+    <Auth0Profile/>
+    </p>
+    }</li>
+    <li>
    { isAuthenticated ? (
-    <div >
+    <div className="">
+   
+    <div>
       <Logout/>
-      
+      </div>
     </div>
    
     ):(
@@ -46,7 +55,7 @@ const Navbar = () => {
     </div>
     )}
     
-    
+    </li>
   </div>
 </nav>
 

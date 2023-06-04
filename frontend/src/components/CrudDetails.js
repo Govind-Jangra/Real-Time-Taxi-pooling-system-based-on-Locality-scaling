@@ -95,7 +95,7 @@ const CrudDetails = () => {
         deleteContact={deleteContact}
         selectContact={selectContact}
       />
-      <AddContact dest={id} addContact={addContact} />
+      {/* <AddContact dest={id} addContact={addContact} /> */}
     </>
   )
 }

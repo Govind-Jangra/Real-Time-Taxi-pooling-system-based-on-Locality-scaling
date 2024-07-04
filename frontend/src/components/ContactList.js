@@ -9,14 +9,16 @@ const ContactList = ({ id,contacts, deleteContact, selectContact }) => {
     const [render, setRender] = useState(false);
     useEffect(() => {
         const getAllData = async () => {
-          const res = await axios.get("http://localhost:9000/api/v1/users");
+          const res = await axios.get("/api/v1/users");
           setUsers(res.data); 
+          console.log("res",res)
         };
         getAllData();
+        
       }, [render]);
     const handelDelete = async (id) => {
         toast.success('Deleted successfully')
-        await axios.delete(`http://localhost:9000/api/v1/users/${id}`);
+        await axios.delete(`/api/v1/users/${id}`);
         const newUsers = users.filter((item) => {
           return item._id !== id;
         });

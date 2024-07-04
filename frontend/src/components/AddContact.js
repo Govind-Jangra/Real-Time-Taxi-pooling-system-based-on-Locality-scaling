@@ -14,7 +14,7 @@ const Add = () => {
   });
   useEffect(() => {
     const getAllData = async () => {
-      const res = await axios.get("http://localhost:9000/api/v1/users");
+      const res = await axios.get("/api/v1/users");
       setUsers(res.data);
     };
     getAllData();
@@ -26,7 +26,7 @@ const Add = () => {
       toast.error("Plz enter all details")
       return
     }
-    await axios.post("http://localhost:9000/api/v1/users", input);
+    await axios.post("/api/v1/users", input);
     setRender(true);
     setInput({
       name: "",
